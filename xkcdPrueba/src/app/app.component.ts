@@ -8,12 +8,19 @@ import { XkcdService } from './services/xkcd.service';
 })
 export class AppComponent {
   title = 'xkcdPrueba';
+  public comicData:any;
 
-  constructor(
-    private xkcdService:XkcdService
-  ){
-    this.xkcdService.getComics().subscribe(resp=>{
-      console.log(resp);
+  constructor(private xkcdService:XkcdService){
+    this.executeCall();
+  }
+
+  executeCall(){
+    this.xkcdService.getComics().subscribe(response=>{
+      this.comicData = response;
+    },
+    error =>{
+      console.log(JSON.stringify(error));
     });
+
   }
 }
