@@ -12,6 +12,8 @@ export class AppComponent {
   constructor(
     private xkcdService:XkcdService
   ){
-
+    this.xkcdService.getComics().subscribe(resp=>{
+      console.log(resp);
+    });
   }
 }
