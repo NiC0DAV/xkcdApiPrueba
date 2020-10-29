@@ -21,6 +21,5 @@ export class AppComponent {
     error =>{
       console.log(JSON.stringify(error));
     });
-
   }
 }

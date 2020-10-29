@@ -1,11 +1,23 @@
 <div class="container">
   <div class="card">
     <h1 class="card-header card-title text-center">{{comicData.title}}</h1>
-    <div class="card-body">
+    <div class="card-body img">
       <img class="mx-auto d-block" [src]="comicData.img" [alt]="comicData.alt">
+      <div class="alert alert-danger" *ngIf="!comicData.img">
+        <p>There was an error getting the image, you should try changing comic.</p>
+      </div>
     </div>
-    <div class="card-footer">
-      <input type="button" class="btn btn-primary" value="Actualizar Comic" onclick="location.reload();">
+    <div class="card-footer footer-width">
+      <div class="rating mt-1">
+        <input type="radio" name="star" id="star1"><label for="star1"></label>
+        <input type="radio" name="star" id="star2"><label for="star2"></label>
+        <input type="radio" name="star" id="star3"><label for="star3"></label>
+        <input type="radio" name="star" id="star4"><label for="star4"></label>
+        <input type="radio" name="star" id="star5"><label for="star5"></label>
+      </div>
+      <br>
+      <br>
+      <input type="button" class="btn btn-primary btn-block" value="Cambiar Comic" onclick="location.reload();">
     </div>
   </div> 
 </div>

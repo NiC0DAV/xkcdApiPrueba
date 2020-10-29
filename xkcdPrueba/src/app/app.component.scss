@@ -1,5 +1,58 @@
-$saludo: red;
+@import 'lib/variables';
 
-.saludo{
-    color: $saludo;
+body{
+    margin: $zeroVal;
+    padding: $zeroVal;
+}
+
+img{
+    max-width: $maxSizeimg;
+    max-height: $maxSizeimg;
+}
+.footer-width{
+    padding: 37px;
+}
+.rating{
+    position: $posAbsol;
+    left: $fiftyPercentValue;
+    transform: $translateCentered;
+    display: flex;
+}
+
+.rating input{
+    display: none;
+}
+
+.rating label{
+    display: $blockDisp;
+    cursor: pointer;
+    width: $fiftyPercentValue;
+}
+
+.rating label:before{
+    content: $starCodeFontAwe;
+    font-family: fontAwesome;
+    position: $posRela;
+    display: $blockDisp;
+    font-size: $fiftyPxValue;
+    color: $defaultStarColor;
+}
+
+.rating label:after{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: $posAbsol;
+    display: $blockDisp;
+    font-size: $fiftyPxValue;
+    color: $hoverCheckedStarColor;
+    top: $zeroVal;
+    opacity: $zeroVal;
+    transition: .5s;
+    text-shadow: $zeroVal 2px 5px $shadowColor;
+}
+
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after{
+    opacity: 1;
 }
